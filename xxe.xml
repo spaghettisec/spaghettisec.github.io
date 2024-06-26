@@ -1,6 +1,4 @@
 <!--?xml version="1.0" ?-->
-<!DOCTYPE replace [<!ENTITY example "Doe"> ]>
  <cardId>
-  <firstName>John</firstName>
-  <lastName>&example;</lastName>
+  <firstName>1</firstName>
  </cardId>
