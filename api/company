@@ -1,0 +1,78 @@
+{
+  "@context": "/api/contexts/Company",
+  "@id": "/api/company",
+  "@type": "Company",
+  "name": "Tomorrowland Belgium",
+  "domain": {
+    "@type": "Domain",
+    "@id": "/api/.well-known/genid/e5b050f2838dbc98eabc",
+    "id": 2,
+    "name": "everygo.fr"
+  },
+  "cguDate": "2024-05-21T00:00:00+00:00",
+  "type": 1,
+  "partnershipLevel": 10,
+  "customDomain": "carpooling.tomorrowland.com",
+  "logoUrl": "https://g.assets-caas.fr/cache/classic/664c5d6749f5c394419493.png",
+  "displayConfiguration": {
+    "@type": "DisplayConfiguration",
+    "@id": "/api/.well-known/genid/d307e267dae0872aa8d8",
+    "homepageLayout": "layout_basic",
+    "footer": "\u003Cfooter id=\"main-footer\" class=\"footer-en footer--stadium-go flex w-full flex-col items-center justify-between gap-4 bg-primary-900 py-10 lining-nums text-white\"\u003E\r\n  \u003Cnav class=\"footer__main-nav flex flex-col items-center justify-center gap-2 md:flex-row\"\u003E\r\n    \u003Ca href=\"/faq\"\u003EFrequently Asked Questions\u003C/a\u003E\r\n    \u003Ca href=\"/charte-confidentialite\"\u003EPrivacy Policy\u003C/a\u003E\r\n    \u003Ca href=\"/conditions-generales\"\u003ETerms and conditions\u003C/a\u003E\r\n    \u003Ca href=\"/mentions-legales\"\u003ELegal Notice\u003C/a\u003E\r\n  \u003C/nav\u003E\r\n  \u003Cp class=\"flex w-full flex-col items-center tomorrowland-logo mt-4\"\u003E\r\n     \u003Cimg src=\"https://t.assets-caas.fr/tomorrowland/assets/TML+LOGO+FULL+WHITE+-+dark+backgrounds.png\" alt=\"Logo Tomorrowland\" /\u003E\r\n  \u003C/p\u003E\r\n\u003C/footer\u003E\r\n\r\n\u003Cfooter id=\"main-footer\" class=\"footer-fr footer--stadium-go flex w-full flex-col items-center justify-between gap-4 bg-primary-900 py-10 lining-nums text-white\"\u003E\r\n  \u003Cnav class=\"footer__main-nav flex flex-col items-center justify-center gap-2 md:flex-row\"\u003E\r\n    \u003Ca href=\"/faq\"\u003EFoire Aux Questions\u003C/a\u003E\r\n    \u003Ca href=\"/charte-confidentialite\"\u003ECharte de confidentialité\u003C/a\u003E\r\n    \u003Ca href=\"/conditions-generales\"\u003EConditions Générales d'Utilisation\u003C/a\u003E\r\n    \u003Ca href=\"/mentions-legales\"\u003EMentions Légales\u003C/a\u003E\r\n  \u003C/nav\u003E\r\n  \u003Cp class=\"flex w-full flex-col items-center tomorrowland-logo mt-4\"\u003E\r\n     \u003Cimg src=\"https://t.assets-caas.fr/tomorrowland/assets/TML+LOGO+FULL+WHITE+-+dark+backgrounds.png\" alt=\"Logo Tomorrowland\" /\u003E\r\n  \u003C/p\u003E\r\n\u003C/footer\u003E",
+    "faviconUrl": "https://g.assets-caas.fr/cache/classic/664c5d675b18c011353898.png"
+  },
+  "familiarTermsInTranslations": false,
+  "favoriteClubEnabled": false,
+  "favoriteClubRequired": false,
+  "sports": [],
+  "competitions": [],
+  "clubs": [],
+  "companyLocales": [
+    {
+      "@type": "CompanyLocale",
+      "@id": "/api/.well-known/genid/a9e0bdf1dcf4d3a1bec9",
+      "locale": {
+        "@type": "Locale",
+        "@id": "/api/locales/fr",
+        "code": "fr",
+        "name": "Français"
+      },
+      "isDefault": false
+    },
+    {
+      "@type": "CompanyLocale",
+      "@id": "/api/.well-known/genid/7748c427b463ea49ca3e",
+      "locale": {
+        "@type": "Locale",
+        "@id": "/api/locales/en",
+        "code": "en",
+        "name": "Anglais"
+      },
+      "isDefault": true
+    }
+  ],
+  "metadata": {
+    "@type": "CompanyMetadata",
+    "@id": "/api/.well-known/genid/a99ce7eeef4730387d7f",
+    "openGraph": {
+      "@type": "OpenGraph",
+      "@id": "/api/.well-known/genid/1279299f098049a10e4a",
+      "imageUrl": "https://g.assets-caas.fr/cache/raw/6673eceddfc17564854222.png",
+      "title": "The carpooling experience | Tomorrowland Belgium",
+      "description": "Share your journey to the festival",
+      "url": "https://carpooling.tomorrowland.com/en",
+      "siteName": "Tomorrowland Belgium"
+    },
+    "robots": {
+      "@type": "Robots",
+      "@id": "/api/.well-known/genid/b30d4eee9165fca47374",
+      "robotIndex": true,
+      "follow": true,
+      "nocache": true,
+      "googleBotIndex": true,
+      "googleBotFollow": true,
+      "googleBotNoImageIndex": true
+    }
+  },
+  "baseUrl": "https://carpooling.tomorrowland.com"
+}
