@@ -1,0 +1,15 @@
+<h2 id="web-cache-deception">Web Cache Deception</h2>
+<h3 id="erkennung">Erkennung</h3>
+<pre><code><span class="hljs-keyword">Ein </span><span class="hljs-keyword">Benutzer </span>greift auf <span class="hljs-keyword">eine </span>geschützte Seite zu, indem er sich <span class="hljs-keyword">einloggt. </span>Der Angreifer fügt <span class="hljs-keyword">jedoch </span><span class="hljs-keyword">eine </span>harmlose Endung wie „.<span class="hljs-keyword">jpg“ </span>oder „.css“ zur URL hinzu. Der Webserver interpretiert <span class="hljs-keyword">dies </span>oft als Anfrage für <span class="hljs-keyword">eine </span>statische Ressource und speichert <span class="hljs-keyword">die </span>Antwort im <span class="hljs-keyword">Cache. </span>Der Angreifer kann dann den gecachten Inhalt abrufen und auf <span class="hljs-keyword">die </span>sensiblen Daten zugreifen.
+</code></pre><h3 id="ursache">Ursache</h3>
+<pre><code>Der Webserver speichert geschützte Inhalte im <span class="hljs-keyword">Cache, </span>weil er nicht prüft, ob <span class="hljs-keyword">die </span>Anfrage öffentlich oder sensibel ist. Oft passiert <span class="hljs-keyword">dies, </span>wenn URLs mit Endungen wie „.<span class="hljs-keyword">jpg“ </span>oder „.css“ fälschlicherweise als statische Dateien erkannt werden.
+</code></pre><h3 id="behebung">Behebung</h3>
+<pre><code>Entwickler müssen sensible Endpunkte so konfigurieren, dass <span class="hljs-keyword">diese </span>nicht vom CDN-Provider oder <span class="hljs-keyword">anderen </span>Caching-Systemen gespeichert werden.
+</code></pre><h3 id="videos">Videos</h3>
+<p><a href="https://www.youtube.com/watch?v=70yyOMFylUA">DEF CON 32 - Gotta Cache ‘em all bending the rules of web cache exploitation - Martin Doyhenard</a></p>
+<p><a href="https://www.youtube.com/watch?v=3YLFZvxZbRc">WEB CACHE DECEPTION FOR BEGINNERS!</a></p>
+<p><a href="https://www.youtube.com/watch?v=mroq9eHFOIU">Web Cache Deception Attack</a></p>
+<h3 id="reports">Reports</h3>
+<p><a href="https://hackerone.com/reports/397508">https://hackerone.com/reports/397508</a></p>
+<p><a href="https://hackerone.com/reports/1271944">https://hackerone.com/reports/1271944</a></p>
+<p><a href="https://hackerone.com/reports/631589">https://hackerone.com/reports/631589</a></p>
