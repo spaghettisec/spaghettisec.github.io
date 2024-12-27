@@ -1,0 +1,18 @@
+<h2 id="clickjacking-ui-redressing-">Clickjacking (UI Redressing)</h2>
+<h3 id="erkennung">Erkennung</h3>
+<pre><code>Technisch gesehen kann jede Website, die <span class="hljs-keyword">in</span> einen iFrame eingebettet werden kann, für Clickjacking-Angriffe anfällig sein. Deshalb ist es sowohl für Website-Administratoren als auch für Endnutzer so wichtig, proaktiv zu handeln, um sie zu verhindern.
+Beispiel-Code (Clickjacking.html): <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://www.onlineshop.example/account"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span></span>
+</code></pre><h3 id="ursache">Ursache</h3>
+<pre><code><span class="hljs-keyword">Die </span>Ursache von Clickjacking ist, dass <span class="hljs-keyword">eine </span>Webseite in <span class="hljs-keyword">einem </span>unsichtbaren oder manipulierten iFrame (<span class="hljs-keyword">eine </span>Art Fenster, das <span class="hljs-keyword">eine </span><span class="hljs-keyword">andere </span>Webseite lädt) auf <span class="hljs-keyword">einer </span><span class="hljs-keyword">bösartigen </span>Webseite <span class="hljs-keyword">eingebettet </span>wird.
+Dadurch können Nutzer unwissentlich auf etwas klicken, das sie nicht <span class="hljs-keyword">sehen, </span>z. <span class="hljs-keyword">B. </span><span class="hljs-keyword">einen </span>Knopf auf der echten Webseite. Der Angreifer nutzt das aus, um z. <span class="hljs-keyword">B. </span>sensible Daten zu stehlen oder Aktionen auszuführen, <span class="hljs-keyword">die </span>der Nutzer nicht <span class="hljs-keyword">beabsichtigt </span>hat.
+</code></pre><h3 id="behebung">Behebung</h3>
+<pre><code>Um Clickjacking zu verhindern, sollten iFrames <span class="hljs-keyword">blockiert </span>werden. Dafür muss der Server so <span class="hljs-keyword">eingestellt </span>werden, dass er den folgenden Header in <span class="hljs-keyword">die </span>HTTP-Response <span class="hljs-keyword">einfügt:
+</span>X-Frame-Options: DENY
+</code></pre><h3 id="videos">Videos</h3>
+<p><a href="https://www.youtube.com/watch?v=HnI0w156rtw">MetaMask - stealing ETH by exploiting clickjacking - $120,000 bug bounty</a></p>
+<p><a href="https://www.youtube.com/watch?v=kzI6sd02lXc">Making $$$ with Clickjacking</a></p>
+<p><a href="https://www.youtube.com/watch?v=_tz0O5-cndE">What is Clickjacking?</a></p>
+<h3 id="reports">Reports</h3>
+<p><a href="https://hackerone.com/reports/591432">https://hackerone.com/reports/591432</a></p>
+<p><a href="https://hackerone.com/reports/198622">https://hackerone.com/reports/198622</a></p>
+<p><a href="https://hackerone.com/reports/97510">https://hackerone.com/reports/97510</a></p>
