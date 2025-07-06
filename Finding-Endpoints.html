@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
   <head>
@@ -8,6 +9,12 @@
     <link rel="icon" type="image/jpeg" href="./author.jpeg" />
     <title>Finding Endpoints</title>
     <script>
+
+        function getUrlParameter(name) {
+        const params = new URLSearchParams(window.location.search);
+        return params.get(name);
+        }
+
         function update() {
             domain = document.getElementById("domain").value;
             
@@ -20,6 +27,15 @@
             document.getElementById("archive").href = "https://web.archive.org/cdx/search/cdx?url=*." + domain +"/*&output=txt&fl=original&collapse=urlkey&page=/";
             document.getElementById("urlscan").href = "https://urlscan.io/search/#page.url.keyword:https%5C%3A%5C%2F%5C%2F" + domain + "%5C%2F%2A";
             document.getElementById("github").href = "https://github.com/search?q=" + domain + "&type=code";
+            const apiKey = getUrlParameter('apikey');
+
+            document.getElementById("virustotal").href = "https://www.virustotal.com/vtapi/v2/domain/report?apikey=HIER&domain=" + domain;
+            if (apiKey) {
+            const aTag = document.getElementById('virustotal');
+            if (aTag) {
+                aTag.href = aTag.href.replace('HIER', encodeURIComponent(apiKey));
+            }
+            }
         }
     </script>
   </head>
@@ -52,6 +68,9 @@
     </a>
     <a id="github" target="_blank" rel="noopener noreferrer">
         GitHub
+    </a>
+    <a id="virustotal" target="_blank" rel="noopener noreferrer">
+        VirusTotal
     </a>
   </body>
 </html>
