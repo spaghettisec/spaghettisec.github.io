@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="SpaghettiSec (Joel Marco Özpinar)" />
+    <link rel="stylesheet" type="text/css" href="Simple.css" />
+    <link rel="icon" type="image/jpeg" href="./author.jpeg" />
+    <title>Finding Endpoints</title>
+    <script>
+
+        function getUrlParameter(name) {
+        const params = new URLSearchParams(window.location.search);
+        return params.get(name);
+        }
+
+        function update() {
+            domain = document.getElementById("domain").value;
+            
+            document.getElementById("google").href = "https://www.google.com/search?q=site:" + domain;
+            document.getElementById("bing").href = "https://www.bing.com/search?q=site:" + domain;
+            document.getElementById("yandex").href = "https://yandex.com/search/?text=site:" + domain;
+            document.getElementById("yahoo").href = "https://de.search.yahoo.com/search?p=site:" + domain;
+            document.getElementById("duckduckgo").href = "https://duckduckgo.com/?q=site:" + domain;
+
+            document.getElementById("archive").href = "https://web.archive.org/cdx/search/cdx?url=*." + domain +"/*&output=txt&fl=original&collapse=urlkey&page=/";
+            document.getElementById("urlscan").href = "https://urlscan.io/search/#page.url.keyword:https%5C%3A%5C%2F%5C%2F" + domain + "%5C%2F%2A";
+            document.getElementById("github").href = "https://github.com/search?q=" + domain + "&type=code";
+            const apiKey = getUrlParameter('apikey');
+
+            document.getElementById("virustotal").href = "https://www.virustotal.com/vtapi/v2/domain/report?apikey=HIER&domain=" + domain;
+            if (apiKey) {
+            const aTag = document.getElementById('virustotal');
+            if (aTag) {
+                aTag.href = aTag.href.replace('HIER', encodeURIComponent(apiKey));
+            }
+            }
+        }
+    </script>
+  </head>
+  <body style="text-align: center;">
+    <h1 style="color: yellow;">Finding Endpoints</h1>
+    <input style="text-align: center;" type="text" placeholder="Domain" id="domain"/>
+    <button onclick="update()">Update</button>
+    <h3 style="color: yellow;">Search Engines</h3>
+    <a id="duckduckgo" target="_blank" rel="noopener noreferrer">
+        DuckDuckGo
+    </a>
+    <a id="google" target="_blank" rel="noopener noreferrer">
+        Google
+    </a>
+    <a id="yandex" target="_blank" rel="noopener noreferrer">
+        Yandex
+    </a>
+    <a id="yahoo" target="_blank" rel="noopener noreferrer">
+        Yahoo
+    </a>
+    <a id="bing" target="_blank" rel="noopener noreferrer">
+        Bing
+    </a>
+    <h3 style="color: yellow;">Other</h3>
+    <a id="archive" target="_blank" rel="noopener noreferrer">
+        WayBack Machine
+    </a>
+    <a id="urlscan" target="_blank" rel="noopener noreferrer">
+        URLScan.io
+    </a>
+    <a id="virustotal" target="_blank" rel="noopener noreferrer">
+        VirusTotal
+    </a>
+    <a id="github" target="_blank" rel="noopener noreferrer">
+        GitHub
+    </a>
+  </body>
+</html>
